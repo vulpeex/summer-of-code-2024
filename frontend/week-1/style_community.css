@@ -1,0 +1,270 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-container, .right-container {
+    flex: 1;
+    
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    padding-top:2rem;
+}
+
+.right-container{
+    background: #eaeaea;
+    align-items: center;
+    padding: 2rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+
+
+
+.navbar {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    padding-left : 2rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #676767;
+    padding-bottom: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+.nav-items{
+    padding: 0.5rem;
+}
+
+.navbar a:hover, .navbar a.active {
+    border-bottom: 1.5px solid #364de0;
+    ;
+}
+
+.illustration {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.illustration img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.login-section {
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-left: 0rem;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #3751FE;
+}
+
+.login-welcome {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+    color: #3751FE;
+}
+
+h2 {
+    font-size: 24px;
+    color: #3751FE;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #3751FE;
+    font-size: small;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+    font-size: 1rem;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: small;
+    color:#474747;
+}
+
+.forgot-password {
+    color: #3751FE;
+    text-decoration: none;
+}
+
+.login-signup {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    height: 54;
+    width: 129;
+}
+
+.login-btn {
+    background-color: #3751FE;
+    color: white;
+    box-shadow: 2px 2px 7px 1px rgba(24,36,111,0.19);
+    text-shadow: 1px 2px 2px rgba(24,36,111,0.19);
+}
+
+.login-btn:hover {
+    background-color: #3a3ad4;
+}
+
+.signup-btn {
+    background-color: white;
+    border: 1px solid #3751FE;
+    color: #3751FE;
+}
+
+.signup-btn:hover {
+    background-color: #f0f0ff;
+}
+
+.social-buttons {
+    display: flex;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: smaller;
+    margin-top:2rem;
+    color:#474747;
+}
+
+
+.social-buttons a {
+    flex: 1;
+    color: #3751FE;
+    padding-left: 0.5rem;
+    margin-left : 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+.social-buttons a:hover {
+    color: #24349e;
+}
+
+/* ... (keep your existing CSS) ... */
+
+/* Add these new styles */
+.login-section {
+    animation-duration: 1s;
+}
+
+.illustration img {
+    animation-duration: 1.5s;
+}
+
+.input-group input {
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #3751FE;
+    outline: none;
+}
+
+.login-btn, .signup-btn {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-buttons a {
+    transition: color 0.3s ease;
+}
+
+.nav-items {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-items::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3751FE;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-items:hover::after, .nav-items.active::after {
+    transform: translateX(0);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.illustration img {
+    animation: float 4s ease-in-out infinite;
+}
